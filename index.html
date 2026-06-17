@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>House Husband Victor</title>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #333;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+}
+
+
+/* ENTER SCREEN */
+
+#enter-screen {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: #111;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 10;
+
+    cursor: pointer;
+
+}
+
+
+#enter-screen h1 {
+
+    color: white;
+
+    font-size: 3rem;
+
+    animation: pulse 1.5s infinite;
+
+}
+
+
+@keyframes pulse {
+
+    50% {
+        opacity: .5;
+    }
+
+}
+
+/* CONTENT */
+
+.container {
+
+    width: 100vw;
+    height: 100vh;
+
+    background: #000;
+
+    overflow: hidden;
+
+}
+
+
+/* VIDEO */
+
+.hero {
+
+    width: 100%;
+    height: 100%;
+
+}
+
+
+.hero video {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div id="enter-screen">
+
+    <h1>
+        ENTER
+    </h1>
+
+</div>
+
+
+
+<div class="container">
+
+    <div class="hero">
+
+        <video id="video" loop playsinline>
+
+            <source src="vic.mp4" type="video/mp4">
+
+            Your browser does not support video.
+
+        </video>
+
+    </div>
+
+</div>
+
+
+
+
+<script>
+
+const enterScreen = document.getElementById("enter-screen");
+
+const video = document.getElementById("video");
+
+
+enterScreen.addEventListener("click", () => {
+
+
+    enterScreen.style.display = "none";
+
+
+    video.muted = false;
+
+    video.play();
+
+
+});
+
+
+</script>
+
+
+</body>
+</html>
